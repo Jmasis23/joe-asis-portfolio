@@ -1,5 +1,5 @@
 # Joe Asis — Portfolio
 
-GoHighLevel Expert & Systems Architect. Single-file static site (`index.html`).
+Single-file static portfolio (`index.html`).
 
-Deploys to Vercel from `main` via the linked project.
+Original React/Tailwind artifact. Deploy to Vercel from `main`.
