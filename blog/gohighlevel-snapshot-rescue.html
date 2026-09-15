@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GoHighLevel Snapshot Rescue: Fix Broken Import</title>
+<meta name="description" content="GoHighLevel snapshot rescue: fix a broken import fast with triage, repair sequence, and QA checklist.">
+<link rel="canonical" href="https://joe-asis-portfolio.vercel.app/blog/gohighlevel-snapshot-rescue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GoHighLevel Snapshot Rescue: How to Fix a Broken Import Without Rebuilding">
+<meta property="og:description" content="A field-tested rescue sequence for broken GoHighLevel snapshot imports. Triage, fix, QA, and launch without rebuilding.">
+<meta property="og:url" content="https://joe-asis-portfolio.vercel.app/blog/gohighlevel-snapshot-rescue">
+<meta property="og:image" content="https://joe-asis-portfolio.vercel.app/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GoHighLevel Snapshot Rescue: How to Fix a Broken Import Without Rebuilding">
+<meta name="twitter:description" content="Fix a broken GoHighLevel snapshot import without rebuilding. Triage order, repair steps, and QA checklist.">
+<meta name="twitter:image" content="https://joe-asis-portfolio.vercel.app/og-image.jpg">
+<style>
+:root{--bg:#0A0A0A;--lime:#D6FF5C;--text:#EDEDED;--muted:#A1A1A1;--card:#131313;--line:#262626;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.7;}
+a{color:var(--lime);text-decoration:none;}
+a:hover{text-decoration:underline;}
+.wrap{max-width:860px;margin:0 auto;padding:32px 20px 80px;}
+.eyebrow{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime);margin-bottom:16px;}
+h1{font-size:clamp(32px,5vw,48px);line-height:1.12;margin:0 0 16px;}
+.sub{color:var(--muted);font-size:18px;margin-bottom:24px;}
+.meta{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:13px;color:var(--muted);margin-bottom:24px;}
+.proofbar{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:28px 0;display:grid;gap:10px;}
+.proofbar strong{color:var(--lime);}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:22px 0;}
+h2{font-size:26px;line-height:1.3;margin:40px 0 12px;}
+h3{font-size:19px;margin:24px 0 8px;color:var(--lime);}
+p{margin:0 0 16px;}
+ul,ol{margin:0 0 18px 22px;}
+li{margin-bottom:10px;}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;background:#1E1E1E;padding:2px 6px;border-radius:6px;font-size:14px;}
+.checklist{list-style:none;margin-left:0;}
+.checklist li{padding-left:30px;position:relative;}
+.checklist li::before{content:"✓";position:absolute;left:0;color:var(--lime);font-weight:700;}
+.cta{background:var(--lime);color:#0A0A0A;border-radius:14px;padding:28px;margin:40px 0;text-align:center;}
+.cta h2{margin:0 0 10px;color:#0A0A0A;}
+.cta p{color:#0A0A0A;margin-bottom:18px;}
+.btn{display:inline-block;background:#0A0A0A;color:var(--lime);padding:14px 28px;border-radius:999px;font-weight:700;}
+.faq h3{color:var(--text);}
+footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:20px;}
+.toc{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:24px 0;background:#0E0E0E;}
+.toc strong{display:block;margin-bottom:8px;font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.15em;color:var(--lime);}
+</style>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"BlogPosting",
+"headline":"GoHighLevel Snapshot Rescue: How to Fix a Broken Import Without Rebuilding",
+"description":"A field-tested rescue sequence for broken GoHighLevel snapshot imports. Triage order, repair steps, QA checklist, and when to rescue vs rebuild.",
+"image":"https://joe-asis-portfolio.vercel.app/og-image.jpg",
+"author":{"@type":"Person","name":"Joe Asis","jobTitle":"Senior GoHighLevel Expert","url":"https://joe-asis-portfolio.vercel.app/booking"},
+"publisher":{"@type":"Organization","name":"Joe Asis","logo":{"@type":"ImageObject","url":"https://joe-asis-portfolio.vercel.app/og-image.jpg"}},
+"datePublished":"2026-09-15",
+"dateModified":"2026-09-15",
+"mainEntityOfPage":{"@type":"WebPage","@id":"https://joe-asis-portfolio.vercel.app/blog/gohighlevel-snapshot-rescue"}
+}
+</script>
+<script type="application/ld+json">
+{
+"@context":"https://schema.org",
+"@type":"FAQPage",
+"mainEntity":[
+{"@type":"Question","name":"Why did my GoHighLevel snapshot import break?","acceptedAnswer":{"@type":"Answer","text":"Most breaks come from five causes: custom values overwritten on import, workflows left live that fire to old contacts, user roles and permissions not mapped, calendars still linked to the source account, and domains or funnels pointing to the wrong location. Triage in that order before you change anything."}},
+{"@type":"Question","name":"Should I rescue a broken snapshot or rebuild from scratch?","acceptedAnswer":{"@type":"Answer","text":"Rescue when the structure is sound and the damage is limited to settings, links, and triggers. Rebuild when pipelines and workflows were deleted, data was merged into the wrong subaccount, or no clean snapshot backup exists. If the core assets import clean twice and only connections fail, rescue saves time."}},
+{"@type":"Question","name":"How do I test a GoHighLevel snapshot after repair?","acceptedAnswer":{"@type":"Answer","text":"Run three test contacts through the full path: one new lead from a form, one from a funnel or calendar booking, and one revived old contact. Confirm tags, pipeline stage moves, SMS and email delivery, calendar assignment, and notifications. Check in test mode first, then with a live number."}},
+{"@type":"Question","name":"How long does a snapshot rescue take?","acceptedAnswer":{"@type":"Answer","text":"A clean rescue often takes hours, not days, when you follow a fixed order: freeze sends, audit custom values, pause risky workflows, remap users and calendars, relink domains, then QA with test contacts. Complex builds with many subaccounts or custom integrations take longer because each connection needs verification."}}
+]
+}
+</script>
+</head>
+<body>
+<div class="wrap">
+<div class="eyebrow">GoHighLevel // Snapshot Rescue</div>
+<h1>GoHighLevel Snapshot Rescue: How to Fix a Broken Import Without Rebuilding</h1>
+<p class="sub">Your snapshot imported but nothing works right. Forms send to the wrong place, automations misfire, calendars show the wrong owner. Here is the exact order I use to rescue it.</p>
+<div class="meta">By Joe Asis, Senior GoHighLevel Expert | Updated September 15, 2026 | 9 min read</div>
+
+<div class="proofbar">
+<div><strong>Proof, not promises:</strong> 5 years daily in GoHighLevel. 100+ systems taken snapshot-to-launch. 400 to 700+ subaccounts supported. 70+ students coached via Extendly.</div>
+<div>Builds for LeadJuice, Seven Figure MSP, StandOut Funnels, Smith Barid, Agent FlyWheel, and 7FigureCRM.</div>
+<div><a href="/booking">Book a rescue call</a> if you want this fixed without guesswork.</div>
+</div>
+
+<div class="toc">
+<strong>IN THIS GUIDE</strong>
+<a href="#why">1. Why snapshot imports break</a><br>
+<a href="#triage">2. Triage order: what to check first</a><br>
+<a href="#fix">3. The fix sequence, step by step</a><br>
+<a href="#qa">4. QA checklist with test contacts</a><br>
+<a href="#rescue">5. When to rescue vs rebuild</a><br>
+<a href="#engage">6. How I engage on rescues</a>
+</div>
+
+<p>A broken snapshot import feels chaotic. The pages look right, but leads route wrong, messages use the wrong business name, and your calendar books under someone else. I see this often in rescue calls.</p>
+<p>I am Joe Asis. I work in GoHighLevel every day and have taken 100+ systems snapshot-to-launch while supporting 400 to 700+ subaccounts. I also coached 70+ students via Extendly on setup and support. The method below is the same one I use for clients like LeadJuice, Seven Figure MSP, StandOut Funnels, Smith Barid, Agent FlyWheel, and 7FigureCRM.</p>
+<p>The core idea is simple: do not rebuild yet. Most snapshot failures are connection failures, not structure failures. If you fix them in the right order, you save days of work.</p>
+
+<h2 id="why">Why Do GoHighLevel Snapshot Imports Break?</h2>
+<p>Snapshots move structure well. They move pipelines, workflows, forms, funnels, and templates. They do not move live connections cleanly. That gap causes almost every break I fix.</p>
+
+<h3>1. Custom values get overwritten or duplicated</h3>
+<p>Custom values hold your business name, phone, email, address, links, and branding. On import, they either keep the source values or get overwritten with blank defaults. The result: emails signed by the wrong company, SMS with the wrong number, footers with dead links.</p>
+<p>I audit custom values first on every rescue because they touch every message. If you skip this, you will chase symptoms in five workflows when the cause sits in one settings table.</p>
+
+<h3>2. Workflows fire during or right after import</h3>
+<p>This is the most damaging failure. If workflows stay live during import, they can send to imported test contacts or old contacts carried in the snapshot. I have seen welcome sequences, invoices, and review requests go to the wrong people within minutes.</p>
+<p>The fix is prevention plus control. Pause before you import. Verify after you import. My full automation standard is covered in <a href="/blog/gohighlevel-automations-every-build">GoHighLevel automations every build needs</a>.</p>
+
+<h3>3. User roles, permissions, and assignment do not map</h3>
+<p>Snapshots do not bring your team with them. Workflow actions tied to a specific user, round robin groups, or notification steps often point to a missing user or the account owner by default. That breaks lead assignment, internal alerts, and task creation.</p>
+<p>Check every action that assigns, notifies, or mentions a user. If the source build used a staff member you do not have, remap it to the correct role in the new subaccount.</p>
+
+<h3>4. Calendars stay linked to the source account</h3>
+<p>Calendars import as shells. The connected Google or Outlook calendar, the assigned user, the availability, and the confirmation workflows often still reference the old setup. Bookings then land on no calendar, or worse, on someone else's calendar.</p>
+<p>Reconnect each calendar to the correct user and test the booking flow. For speed to lead impact, see <a href="/blog/speed-to-lead-workflow-any-niche">speed to lead workflow for any niche</a>.</p>
+
+<h3>5. Domains, funnel URLs, and link mismatches</h3>
+<p>Funnels and sites import with placeholder or source domains. Forms may post to the right list but redirect to a dead thank you page. Trigger links and buttons may still point to the source domain. Go live without checking this and your ads send traffic to a 404.</p>
+<p>Relink the domain, update every funnel step URL, then click every button as a stranger would.</p>
+
+<h2 id="triage">Triage Order: What to Check First</h2>
+<p>Do not start editing. Start containing. This triage order stops further damage and shows you the true scope in under 30 minutes.</p>
+<div class="card">
+<ol>
+<li><strong>Freeze all outbound sends.</strong> Pause workflows, bulk actions, and scheduled messages. Switch SMS and email to test mode if possible.</li>
+<li><strong>Confirm what imported.</strong> List pipelines, workflows, forms, funnels, calendars, custom values, and tags. Mark each as clean, broken, or missing.</li>
+<li><strong>Check custom values.</strong> Open Settings, then Custom Values. Compare business name, phone, email, address, and URLs against the live business.</li>
+<li><strong>Check users and assignment.</strong> List every workflow step that assigns or notifies. Flag missing users.</li>
+<li><strong>Check calendars and integrations.</strong> Note which calendars connect, which users own them, and which integrations show disconnected.</li>
+<li><strong>Check domains and funnel links.</strong> Confirm primary domain, funnel URLs, form redirect URLs, and payment links.</li>
+</ol>
+</div>
+<p>Write this down in a simple sheet. One row per issue, one owner, one status. This sheet becomes your rescue plan. It also stops random fixes that create new breaks.</p>
+<p>If you plan to hand this to a helper later, read <a href="/blog/hire-gohighlevel-virtual-assistant">how to hire a GoHighLevel virtual assistant</a> so access and QA stay tight.</p>
+
+<h2 id="fix">The Fix Sequence, Step by Step</h2>
+<p>Fix in layers. Settings first, then people, then connections, then messages, then traffic. This order prevents rework.</p>
+
+<h3>Step 1: Lock the account</h3>
+<p>Turn all active workflows to draft or paused. Pause triggers on forms, surveys, and inbound numbers. Tell the team no live testing until QA starts. This takes five minutes and prevents the most costly errors.</p>
+
+<h3>Step 2: Repair custom values and business profile</h3>
+<p>Update company name, phone, email, address, hours, social links, logo URLs, and legal links. Use clear names like <code>biz_phone_main</code> and <code>biz_email_support</code> so future imports map fast. Replace any source brand text in email and SMS templates with these values.</p>
+
+<h3>Step 3: Remap users, roles, and notifications</h3>
+<p>Add the correct users with the least access they need to do the job. Remap assignment in pipelines, round robin, workflow notify steps, and calendar ownership. Send a test internal notification to each role to confirm routing.</p>
+<p>If you are vetting outside help for this step, use <a href="/blog/gohighlevel-expert-hire-questions">the questions to ask before you hire a GoHighLevel expert</a>.</p>
+
+<h3>Step 4: Reconnect calendars and availability</h3>
+<p>For each calendar: assign the right owner, connect the right Google or Outlook account, set availability and buffers, then link the correct confirmation, reminder, and no show workflows. Test book, reschedule, and cancel. Confirm the event lands on the right calendar and the contact gets the right messages.</p>
+
+<h3>Step 5: Relink domains, funnels, and forms</h3>
+<p>Connect the live domain. Update funnel settings, each step URL, form thank you redirects, chat widgets, and payment product links. Replace any hard coded source domain in buttons and emails. Click through every path on mobile and desktop.</p>
+
+<h3>Step 6: Clean workflows trigger by trigger</h3>
+<p>Open each workflow in order of risk: new lead response first, then booking, then nurture, then review and referral. For each one confirm trigger filters, wait steps, SMS and email content, custom value tokens, assignment steps, and goal events. Keep what matches the new business. Archive duplicates from the snapshot that you do not need.</p>
+<p>My baseline for a clean build is detailed in <a href="/blog/gohighlevel-snapshot-to-launch">GoHighLevel snapshot to launch</a>. Use it to confirm you kept the essentials.</p>
+
+<h3>Step 7: Reconnect integrations and phones</h3>
+<p>Reconnect LC Phone, email sending domain with SPF and DKIM, Facebook and Google integrations, Stripe, and any webhook or API keys. Keys do not transfer in snapshots. Replace them and test each one with a live action, not just a green checkmark.</p>
+
+<h2 id="qa">QA Checklist With Test Contacts</h2>
+<p>You need proof the system works end to end. Use three fresh test contacts with real mobile numbers and inboxes you control.</p>
+<div class="card">
+<ul class="checklist">
+<li>Form test: submit each live form. Tag applied. Pipeline stage correct. Speed to lead SMS sent in under 60 seconds. Internal alert reached the right user.</li>
+<li>Booking test: book, reschedule, cancel. Calendar owner correct. Confirmation and reminders correct. No show path fires as designed.</li>
+<li>Old contact test: move a cold contact into nurture. Correct voice, correct business name, correct unsubscribe link. No cross client leakage.</li>
+<li>Message check: every SMS and email uses new custom values. No source brand, source phone, or source links remain.</li>
+<li>Pipeline check: drag a card through each stage. Automations tied to stage moves fire once and only once.</li>
+<li>Payment check: run a test invoice or order. Receipt correct. Fulfillment workflow starts.</li>
+<li>Domain check: every funnel page loads on the live domain. No 404s. Redirects work. Favicon and header branding match.</li>
+<li>Access check: staff can see only what their role needs. Owner gets all alerts. No workflow references a deleted user.</li>
+</ul>
+</div>
+<p>Log results with timestamps and screenshots. If a step fails, fix the source setting, not the message copy. Then rerun the full contact path, not just the failed step.</p>
+
+<h2 id="rescue">When to Rescue vs When to Rebuild</h2>
+<p>Rescue when the core imports clean twice and only connections fail. If pipelines, workflows, forms, and funnels are present and sound, rescue is faster. Most cases I take on fall here.</p>
+<p>Rebuild when the snapshot itself is corrupt. Signs: key pipelines missing after two imports, workflows import empty, media and templates fail repeatedly, or contacts merged into the wrong subaccount with no clean backup. Rebuilding a clean core with my <a href="/blog/gohighlevel-snapshot-to-launch">snapshot to launch process</a> beats patching a broken base.</p>
+<p>Rule I use with clients: if triage shows more than 40 percent of core assets missing or firing wrong after containment, price a rebuild. If under that line, rescue. Either way, keep a clean snapshot backup before you touch anything further.</p>
+
+<h2 id="engage">How I Engage on Snapshot Rescues</h2>
+<p>I keep rescues direct and contained. You get a fixed scope, a clear order, and proof at each step.</p>
+<div class="card">
+<ul>
+<li><strong>Audit:</strong> I map what imported, what broke, and what risks live sends. You get a one page issue list in priority order.</li>
+<li><strong>Repair:</strong> I work the fix sequence above: custom values, users, calendars, domains, workflows, integrations. No random edits.</li>
+<li><strong>QA:</strong> I run test contacts through form, booking, and nurture paths and share the logs. You see delivery, assignment, and timing.</li>
+<li><strong>Handoff:</strong> I save a clean snapshot, document custom values and key links, and record a short walkthrough so your team can run it.</li>
+</ul>
+</div>
+<p>This comes from daily reps: 5 years in GoHighLevel, 100+ systems snapshot-to-launch, 400 to 700+ subaccounts supported, 70+ students coached via Extendly, plus builds for LeadJuice, Seven Figure MSP, StandOut Funnels, Smith Barid, Agent FlyWheel, and 7FigureCRM.</p>
+<p>Related reading: <a href="/blog/gohighlevel-automations-every-build">automations every build needs</a>, <a href="/blog/speed-to-lead-workflow-any-niche">speed to lead workflow</a>, and <a href="/blog/gohighlevel-expert-hire-questions">hire questions</a>.</p>
+
+<div class="card faq">
+<h2>FAQ</h2>
+<h3>Why did my GoHighLevel snapshot import break?</h3>
+<p>Most breaks come from five causes: custom values overwritten on import, workflows left live that fire to old contacts, user roles and permissions not mapped, calendars still linked to the source account, and domains or funnels pointing to the wrong location. Triage in that order before you change anything.</p>
+<h3>Should I rescue a broken snapshot or rebuild from scratch?</h3>
+<p>Rescue when the structure is sound and the damage is limited to settings, links, and triggers. Rebuild when pipelines and workflows were deleted, data was merged into the wrong subaccount, or no clean snapshot backup exists. If the core assets import clean twice and only connections fail, rescue saves time.</p>
+<h3>How do I test a GoHighLevel snapshot after repair?</h3>
+<p>Run three test contacts through the full path: one new lead from a form, one from a funnel or calendar booking, and one revived old contact. Confirm tags, pipeline stage moves, SMS and email delivery, calendar assignment, and notifications. Check in test mode first, then with a live number.</p>
+<h3>How long does a snapshot rescue take?</h3>
+<p>A clean rescue often takes hours, not days, when you follow a fixed order: freeze sends, audit custom values, pause risky workflows, remap users and calendars, relink domains, then QA with test contacts. Complex builds with many subaccounts or custom integrations take longer because each connection needs verification.</p>
+</div>
+
+<div class="cta">
+<h2>Broken import? Get it rescued right.</h2>
+<p>Send me your triage sheet or give me view access. I will confirm rescue vs rebuild and fix it in order.</p>
+<a class="btn" href="/booking">Book Your Rescue Call</a>
+</div>
+
+<footer>
+Written by Joe Asis, Senior GoHighLevel Expert. 5 years daily GHL. 100+ snapshot-to-launch systems. 400 to 700+ subaccounts supported. 70+ students coached via Extendly.<br>
+<a href="/booking">Booking</a> | <a href="/blog/gohighlevel-snapshot-to-launch">Snapshot to Launch</a> | <a href="/blog/hire-gohighlevel-virtual-assistant">Hire a VA</a>
+</footer>
+</div>
+</body>
+</html>
