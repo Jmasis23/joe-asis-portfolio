@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://joe-asis-portfolio.vercel.app/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-15</lastmod>
   </url>
   <url>
     <loc>https://joe-asis-portfolio.vercel.app/booking</loc>
@@ -37,27 +37,15 @@
     <lastmod>2026-09-15</lastmod>
   </url>
   <url>
-    <loc>https://joe-asis-portfolio.vercel.app/niches/healthcare/</loc>
+    <loc>https://joe-asis-portfolio.vercel.app/blog/gohighlevel-ai-receptionist-setup</loc>
     <lastmod>2026-09-17</lastmod>
   </url>
   <url>
-    <loc>https://joe-asis-portfolio.vercel.app/niches/legal/</loc>
+    <loc>https://joe-asis-portfolio.vercel.app/blog/hire-gohighlevel-missed-call-text-back-setup</loc>
     <lastmod>2026-09-17</lastmod>
   </url>
   <url>
-    <loc>https://joe-asis-portfolio.vercel.app/niches/mortgage/</loc>
-    <lastmod>2026-09-17</lastmod>
-  </url>
-  <url>
-    <loc>https://joe-asis-portfolio.vercel.app/niches/insurance/</loc>
-    <lastmod>2026-09-17</lastmod>
-  </url>
-  <url>
-    <loc>https://joe-asis-portfolio.vercel.app/niches/coaching/</loc>
-    <lastmod>2026-09-17</lastmod>
-  </url>
-  <url>
-    <loc>https://joe-asis-portfolio.vercel.app/niches/saas-membership/</loc>
+    <loc>https://joe-asis-portfolio.vercel.app/blog/gohighlevel-duplicate-contacts-fix</loc>
     <lastmod>2026-09-17</lastmod>
   </url>
 </urlset>
