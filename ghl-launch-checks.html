@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>10 Launch Checks Most GoHighLevel Agencies Skip (Free Guide) | Joe Asis</title>
+<meta name="description" content="Free one-page field check for GoHighLevel launches: 10 launch checks most GHL agencies skip, each with a concrete pass condition. Run it with one disposable test lead before handoff.">
+<link rel="canonical" href="https://joe-asis-portfolio.vercel.app/ghl-launch-checks">
+<meta property="og:type" content="website">
+<meta property="og:title" content="10 Launch Checks Most GoHighLevel Agencies Skip | Joe Asis">
+<meta property="og:description" content="A free one-page field check to prove a GoHighLevel build before handoff: real test leads, duplicates, stop conditions, unhappy paths, attribution, and proof-of-launch.">
+<meta property="og:url" content="https://joe-asis-portfolio.vercel.app/ghl-launch-checks">
+<meta property="og:site_name" content="Joe Asis">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#0A0A0A;color:#fff;font-family:'Inter',ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#D6FF5C}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:14px 20px;background:rgba(10,10,10,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.08)}
+.brand{color:#fff;text-decoration:none;display:flex;align-items:baseline;gap:10px}
+.brand .name{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-size:22px;letter-spacing:-.02em}
+.brand .tag{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:4px 10px}
+@media (max-width:560px){.brand .tag{display:none}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9999px;padding:10px 22px;font-size:14px;font-weight:600;text-decoration:none;border:0;cursor:pointer}
+.btn-lime{background:#D6FF5C;color:#000}
+.btn-lime:hover{background:#c5ec4f}
+.btn-ghost{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.15);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.wrap{max-width:820px;margin:0 auto;padding:64px 20px 90px}
+.eyebrow{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
+h1{font-size:clamp(34px,5.4vw,56px);font-weight:800;letter-spacing:-.03em;line-height:1.04}
+h1 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;color:rgba(255,255,255,.85)}
+.lede{margin-top:22px;font-size:17px;line-height:1.75;color:rgba(255,255,255,.78);max-width:44rem}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chip{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.04);border-radius:999px;padding:8px 12px;color:rgba(255,255,255,.85)}
+.chip.lime{border-color:rgba(214,255,92,.4);background:rgba(214,255,92,.08);color:#D6FF5C}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+section{margin-top:72px}
+h2{font-size:clamp(24px,3.4vw,32px);font-weight:800;letter-spacing:-.02em;line-height:1.15;margin-bottom:8px}
+h2 em{font-family:'Playfair Display',Georgia,serif;font-style:italic;font-weight:500;color:rgba(255,255,255,.8)}
+.sub{font-size:15px;line-height:1.7;color:rgba(255,255,255,.6);max-width:40rem;margin-bottom:26px}
+.card{border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:26px;background:#111}
+.sample-card{display:block;text-decoration:none;color:#fff;transition:border-color .2s,transform .2s}
+.sample-card:hover{border-color:rgba(214,255,92,.5);transform:translateY(-2px)}
+.sample-card .k{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#D6FF5C;margin-bottom:10px}
+.sample-card h3{font-size:22px;font-weight:700;letter-spacing:-.02em;margin-bottom:10px}
+.sample-card p{font-size:15px;line-height:1.7;color:rgba(255,255,255,.72)}
+.sample-card .go{margin-top:16px;font-size:14px;font-weight:600;color:#D6FF5C}
+ol.checks{list-style:none;counter-reset:c;margin-top:6px}
+ol.checks li{position:relative;counter-increment:c;padding:12px 0 12px 40px;font-size:15px;line-height:1.6;color:rgba(255,255,255,.78);border-bottom:1px solid rgba(255,255,255,.06)}
+ol.checks li:last-child{border-bottom:0}
+ol.checks li::before{content:counter(c,decimal-leading-zero);position:absolute;left:0;top:14px;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;color:#D6FF5C;letter-spacing:.08em}
+ul.points{list-style:none;margin-top:6px}
+ul.points li{position:relative;padding:12px 0 12px 34px;font-size:15px;line-height:1.6;color:rgba(255,255,255,.78);border-bottom:1px solid rgba(255,255,255,.06)}
+ul.points li:last-child{border-bottom:0}
+ul.points li::before{content:"";position:absolute;left:2px;top:17px;width:16px;height:16px;border-radius:50%;background:rgba(214,255,92,.12);border:1px solid rgba(214,255,92,.5)}
+ul.points li::after{content:"";position:absolute;left:7px;top:21px;width:6px;height:3px;border-left:2px solid #D6FF5C;border-bottom:2px solid #D6FF5C;transform:rotate(-45deg)}
+.truth{border-left:3px solid #D6FF5C;background:rgba(214,255,92,.05);border-radius:0 16px 16px 0;padding:22px 24px;font-size:15px;line-height:1.75;color:rgba(255,255,255,.8)}
+.truth strong{color:#fff}
+.form-shell{margin-top:8px;border:1px solid rgba(255,255,255,.12);border-radius:20px;background:#111;padding:24px}
+.field{margin-bottom:16px}
+.field label{display:block;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:8px}
+.field input,.field textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:12px 14px;font-size:15px;color:#fff;font-family:inherit}
+.field input:focus,.field textarea:focus{outline:none;border-color:rgba(214,255,92,.6)}
+.field textarea{min-height:110px;resize:vertical}
+.hp{position:absolute;left:-9999px;top:-9999px;opacity:0;height:0;overflow:hidden}
+.consent{font-size:12.5px;line-height:1.6;color:rgba(255,255,255,.5);margin:4px 0 16px}
+.form-msg{margin-top:14px;font-size:14px;line-height:1.6;display:none}
+.form-msg.ok{display:block;color:#D6FF5C}
+.form-msg.err{display:block;color:#ff8f8f}
+button.btn-lime{font-family:inherit}
+.fineprint{margin-top:56px;border-top:1px solid rgba(255,255,255,.08);padding-top:26px;font-size:13px;line-height:1.7;color:rgba(255,255,255,.45)}
+.fineprint a{color:rgba(255,255,255,.7)}
+.footer-nav{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center;margin-top:40px;border-top:1px solid rgba(255,255,255,.08);padding-top:26px;font-size:13px;color:rgba(255,255,255,.5)}
+.footer-nav a{color:rgba(255,255,255,.75);text-decoration:none}
+.footer-nav a:hover{color:#D6FF5C}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"10 Launch Checks Most GoHighLevel Agencies Skip (Free Guide)","url":"https://joe-asis-portfolio.vercel.app/ghl-launch-checks","description":"Free one-page field check for GoHighLevel launches: 10 launch checks most GHL agencies skip, each with a concrete pass condition.","author":{"@type":"Person","name":"Joe Asis","url":"https://joe-asis-portfolio.vercel.app/"}}
+</script>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="/">
+    <span class="name">Joe Asis</span>
+    <span class="tag">Senior GHL Expert</span>
+  </a>
+  <a class="btn btn-ghost" href="/">Back to portfolio</a>
+</nav>
+<main class="wrap">
+
+  <div class="eyebrow">Free GoHighLevel field guide</div>
+  <h1>Prove the build <em>before the client finds the break.</em></h1>
+  <p class="lede">Most launch checklists stop at "is it turned on?" That is not the same as proving the customer journey works. This free one-page field check gives you 10 launch checks most GoHighLevel agencies skip, each with a concrete pass condition, built to run with one disposable test lead before handoff.</p>
+  <div class="chips">
+    <span class="chip lime">Free - no email required</span>
+    <span class="chip">One page, 10 checks</span>
+    <span class="chip">Run it in under an hour</span>
+  </div>
+  <div class="hero-cta">
+    <a class="btn btn-lime" href="https://files.instinct.com/file-01M30WCHNWPD09ZN8MQ1KZ8VBJ">Read the free guide</a>
+    <a class="btn btn-ghost" href="#updates">Get new guides by email</a>
+  </div>
+
+  <section>
+    <h2>The problem</h2>
+    <p class="sub">A workflow can look green in the builder while the real lead path still breaks at the form, the assignment, the reply, the booking, the stop condition, or the handoff. Most failures get found by the client after launch.</p>
+    <ul class="points">
+      <li>Launch QA is manual, time-consuming, and easy to get wrong across many sub-accounts.</li>
+      <li>SMS, email, and workflows can stop working silently, found only later.</li>
+      <li>Most free checklists cover "is it on," not whether the real lead journey actually works end to end.</li>
+    </ul>
+  </section>
+
+  <section>
+    <a class="card sample-card" href="https://files.instinct.com/file-01M30WCHNWPD09ZN8MQ1KZ8VBJ">
+      <div class="k">The free guide - no email needed</div>
+      <h3>10 launch checks most GoHighLevel agencies skip</h3>
+      <p>A one-page field check built to run with one disposable test lead. Every check has a concrete pass condition, so "done" means proven, not assumed.</p>
+      <div class="go">Open the free guide &rarr;</div>
+    </a>
+  </section>
+
+  <section>
+    <h2>What the 10 checks <em>cover</em></h2>
+    <p class="sub">The parts of a launch that usually get skipped because the builder says everything looks fine.</p>
+    <ol class="checks">
+      <li>Lead intake from the real form, not the builder preview</li>
+      <li>Duplicate behavior when the same lead comes back</li>
+      <li>Speed-to-lead timing on the first message</li>
+      <li>Stop conditions when a lead replies or opts out</li>
+      <li>Unhappy paths: missed calls, no-shows, partial bookings</li>
+      <li>Pipeline handoffs between stages and owners</li>
+      <li>Calendar reality: real bookings, real reminders</li>
+      <li>Mobile messages on an actual phone</li>
+      <li>Attribution: source and campaign tracking that survives</li>
+      <li>Proof-of-launch evidence you can show the client</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Who it is for</h2>
+    <p class="sub">Freelance GoHighLevel implementers, small agency owners, and VAs who launch and maintain client sub-accounts. If you hand off builds and want fewer "hey, this broke" messages, this guide is for you.</p>
+  </section>
+
+  <section>
+    <h2>Why I made it</h2>
+    <div class="truth">
+      <p>I'm Joe Asis, a GoHighLevel implementation partner. I build and QA client systems for a living, and this is the same launch pass I run before handoff. I published it free because the gap between "turned on" and "proven" is where most client trust gets lost.</p>
+    </div>
+  </section>
+
+  <section id="updates">
+    <h2>Get new guides by email</h2>
+    <p class="sub">Reading the guide needs no email. Leave yours only if you want new free GHL guides and fixes as I publish them. Three fields: your email, your role, and the QA problem you want help with. That answer shapes what I write next. No spam, no calls.</p>
+    <div class="form-shell">
+      <form id="lead-form" novalidate>
+        <div class="field">
+          <label for="lf-email">Email</label>
+          <input id="lf-email" name="email" type="email" autocomplete="email" required maxlength="254" placeholder="you@agency.com">
+        </div>
+        <div class="field">
+          <label for="lf-role">Your role</label>
+          <input id="lf-role" name="role" type="text" required maxlength="120" placeholder="e.g. freelance GHL implementer, agency owner, VA">
+        </div>
+        <div class="field">
+          <label for="lf-problem">The QA problem you want help with</label>
+          <textarea id="lf-problem" name="qa_problem" required maxlength="2000" placeholder="What keeps breaking after launch?"></textarea>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label>Company <input name="company" type="text" tabindex="-1" autocomplete="off"></label>
+        </div>
+        <p class="consent">By submitting you agree to get new free GoHighLevel guides by email. Your answers are stored in my own database, not a third-party form tool. Unsubscribe anytime.</p>
+        <button class="btn btn-lime" type="submit">Send me the new guides</button>
+        <p class="form-msg" id="lf-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <div class="fineprint">
+    <p>The guide is free and ungated. Emails left here are used only to send new free guides and to reply about the QA problem you shared. Built and published by Joe Asis.</p>
+  </div>
+
+  <div class="footer-nav">
+    <span>&copy; 2026 Joe Asis</span>
+    <span><a href="/">Portfolio</a> &nbsp;&middot;&nbsp; <a href="/blog/">Blog</a> &nbsp;&middot;&nbsp; <a href="/#contact">Contact</a></span>
+  </div>
+
+</main>
+<script defer src="https://va.vercel-scripts.com/v1/script.js"></script>
+<script>
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a');
+  if(!a||!window.va)return;
+  var h=a.getAttribute('href')||'';
+  if(h.indexOf('file-01M30WCHNWPD09ZN8MQ1KZ8VBJ')>-1){window.va('event',{name:'guide-click'})}
+  if(h==='#updates'){window.va('event',{name:'signup-click'})}
+});
+(function(){
+  var form=document.getElementById('lead-form');
+  var msg=document.getElementById('lf-msg');
+  var started=Date.now();
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    msg.className='form-msg';msg.textContent='';
+    var email=form.email.value.trim(),role=form.role.value.trim(),qp=form.qa_problem.value.trim();
+    if(!email||!role||!qp){msg.className='form-msg err';msg.textContent='Please fill in all three fields.';return}
+    var btn=form.querySelector('button[type=submit]');
+    btn.disabled=true;btn.textContent='Sending...';
+    try{
+      var r=await fetch('/api/leads',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:email,role:role,qa_problem:qp,company:form.company.value,t:started})});
+      var d=await r.json().catch(function(){return{}});
+      if(r.ok&&d.ok){
+        msg.className='form-msg ok';
+        msg.textContent=d.duplicate?'You are already on the list - I updated your answers. Thanks!':'You are on the list. New guides land in your inbox as I publish them.';
+        if(window.va)window.va('event',{name:'signup-success'});
+        form.reset();started=Date.now();
+      }else if(r.status===429){
+        msg.className='form-msg err';msg.textContent='Too many attempts from this connection. Please try again later.';
+      }else if(r.status===422){
+        msg.className='form-msg err';msg.textContent='Please check your email address and answers and try again.';
+      }else{
+        msg.className='form-msg err';msg.textContent='Something went wrong on my side. Please try again in a moment.';
+      }
+    }catch(err){
+      msg.className='form-msg err';msg.textContent='Network problem. Please try again.';
+    }
+    btn.disabled=false;btn.textContent='Send me the new guides';
+  });
+})();
+</script>
+</body>
+</html>
