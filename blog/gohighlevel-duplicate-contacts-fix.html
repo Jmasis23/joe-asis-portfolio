@@ -57,7 +57,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 "author":{"@type":"Person","name":"Joe Asis","jobTitle":"Senior GoHighLevel Expert","url":"https://joe-asis-portfolio.vercel.app/booking"},
 "publisher":{"@type":"Organization","name":"Joe Asis","logo":{"@type":"ImageObject","url":"https://joe-asis-portfolio.vercel.app/og-image.jpg"}},
 "datePublished":"2026-09-17",
-"dateModified":"2026-09-17",
+"dateModified":"2026-10-04",
 "mainEntityOfPage":{"@type":"WebPage","@id":"https://joe-asis-portfolio.vercel.app/blog/gohighlevel-duplicate-contacts-fix"}
 }
 </script>
@@ -68,7 +68,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 "mainEntity":[
 {"@type":"Question","name":"Why do GoHighLevel duplicate contacts appear?","acceptedAnswer":{"@type":"Answer","text":"Duplicates come from several intake paths writing to the same list: form submissions, calendar bookings, messenger conversations, manual entry, and third-party tools such as Zapier. HighLevel's CSV importer merges on email or phone and does not create duplicates on its own, but a file with inconsistent phone formats or a missing email can still produce two records for one person."}},
 {"@type":"Question","name":"What happens to workflows when I merge duplicate contacts?","acceptedAnswer":{"@type":"Answer","text":"If the duplicate contact is deleted in the merge, HighLevel transfers the workflow execution to the master contact so the automation continues. If the master is already enrolled in that same workflow, the duplicate is removed from the workflow instead, and the Execution Logs show which of the two happened."}},
-{"@type":"Question","name":"What happens to appointments and payments after a merge?","acceptedAnswer":{"@type":"Answer","text":"Appointments, payments, orders, and invoices default to the values on the master record you selected. Signed documents do not transfer automatically. Pick the record with the longest payment and appointment history as the master, review the merge preview before you confirm, and reconcile the payments list afterward."}},
+{"@type":"Question","name":"What happens to appointments and payments after a merge?","acceptedAnswer":{"@type":"Answer","text":"Appointments, payments, orders, and invoices default to the values on the master record you selected. Pick the record with the longest payment and appointment history as the master, review the merge preview before you confirm, and reconcile the payments list afterward."}},
 {"@type":"Question","name":"Can I undo a merge in GoHighLevel?","acceptedAnswer":{"@type":"Answer","text":"No. HighLevel states that contact merges are permanent, and only subaccount admins can run them. Export your contacts before you start and keep a log of the masters you chose, so you have a reference if you need to rebuild something later."}}
 ]
 }
@@ -79,7 +79,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <div class="eyebrow">GoHighLevel // Contact Cleanup</div>
 <h1>GoHighLevel Duplicate Contacts: How to Clean Up a Messy Subaccount Safely</h1>
 <p class="sub">Your contact list has the same person three times, the conversation history is split across all three, and you are afraid to merge because a live workflow is attached. Here is the order that fixes it.</p>
-<div class="meta">By Joe Asis, Senior GoHighLevel Expert | Updated September 17, 2026 | 8 min read</div>
+<div class="meta">By Joe Asis, Senior GoHighLevel Expert | Updated October 4, 2026 | 8 min read</div>
 
 <div class="proofbar">
 <div><strong>Proof, not promises:</strong> 5 years in GoHighLevel daily. 100+ client systems built. 400 to 700+ subaccounts supported. 70+ VAs and students coached.</div>
@@ -109,7 +109,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <p>HighLevel states that its CSV import merges contacts by phone number or email and cannot create duplicates on its own. The same documentation still lists CSV imports as a common duplicate source. Both are true: the file creates the mismatch. One row carries an email, the next carries the same person's phone, or the phone format changes between rows. HighLevel matches on one field, misses the other, and you end up with two records. Normalize the file before upload: one phone format across every row, one email per record.</p>
 
 <h3>Form submissions plus calendar bookings</h3>
-<p>If a lead fills out a form and then books a call, one visit can create two records. The form collects an email and the calendar collects a phone. The <code>Find Existing Contacts Based On</code> setting lets you pick email or phone as the lookup field, so the field you did not choose is the one that lets a second record through.</p>
+<p>If a lead fills out a form and then books a call, one visit can create two records. The form collects an email and the calendar collects a phone. The <code>Find Existing Contacts Based On</code> setting lets you pick email or phone as the primary lookup field, with an optional secondary. If a submission carries only the field you did not set, it can slip past the match and create a second record. See the <a href="https://help.gohighlevel.com/support/solutions/articles/48001181714-allow-duplicate-contacts-contact-deduplication-preferences-" rel="noopener">deduplication preferences documentation</a>.</p>
 
 <h3>Third-party tools and manual entry</h3>
 <p>The deduplication preferences apply to Forms, Zapier, Facebook, and Instagram Messenger. When <code>Allow Duplicate Contact</code> is on, HighLevel creates a new record even if the email or phone already exists in the list. Manual entry and messenger conversations add to the pile whenever a name does not match exactly.</p>
@@ -143,7 +143,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <h2 id="survives">What Survives a Merge, and What Moves to the Master Record?</h2>
 <p>The record you pick as master stays, and it keeps its existing values by default. Other records fill in a custom field only when the matching field on the master is blank, so an existing master value is never overwritten. Tags, notes, opportunities, tasks, conversations, courses, community groups, and products combine from the selected records.</p>
 <p>The Merge Contacts window shows you the fields where the records differ and lets you deselect what you do not want. That review step is your only control.</p>
-<p>What burns people is history, not fields. HighLevel's merge documentation lists conversations as combining, but it does not promise that the full activity feed of the record you remove survives. Accounts on HighLevel's own feedback board report losing the non-master activity feed and message thread. Signed documents do not transfer automatically. So open the record you plan to drop, screenshot or export the thread, and download the signed documents before you touch the merge button.</p>
+<p>What burns people is history, not fields. <a href="https://help.gohighlevel.com/support/solutions/articles/48001202210-how-to-manage-and-merge-duplicate-contacts" rel="noopener">HighLevel documents</a> that conversations, notes, tasks, and opportunities combine into the master, and that appointments, payments, orders, and invoices default to the master's values. Because merges are permanent, I still open the record I plan to drop and export or screenshot its message thread and any payment history before I touch the merge button. That is a precaution, not a documented gap.</p>
 
 <h2 id="attached">What Happens to Workflows, Appointments, and Payments on the Record That Goes Away?</h2>
 <p><strong>Workflows.</strong> If a duplicate contact is deleted in the merge, HighLevel transfers the workflow execution to the master contact so the automation continues. If the master is already in that workflow, the duplicate leaves the workflow instead, and the Execution Logs show which outcome happened. Check the logs after each batch instead of assuming.</p>
@@ -168,7 +168,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <h2 id="prevent">How Do You Stop Duplicates From Coming Back?</h2>
 <p>Merging only cleans up what is already there. These settings and habits stop new duplicates.</p>
 <ul>
-<li><strong>Set the lookup field.</strong> Under Settings, <code>Find Existing Contacts Based On</code> offers Email, the default, or Phone. Pick what your intake collects most consistently.</li>
+<li><strong>Set the lookup field.</strong> Under Settings, <code>Find Existing Contacts Based On</code> lets you choose a primary lookup field, Email (the default) or Phone, with an optional secondary field. <a href="https://help.gohighlevel.com/support/solutions/articles/48001181714-allow-duplicate-contacts-contact-deduplication-preferences-" rel="noopener">HighLevel explains</a> that it checks the primary field first and falls back to the secondary. Pick what your intake collects most consistently.</li>
 <li><strong>Turn <code>Allow Duplicate Contact</code> off unless you have a reason.</strong> Matching submissions then update the existing contact. CSV imports merge on email or phone regardless of that setting.</li>
 <li><strong>Make intake paths agree.</strong> Decide whether the form or the calendar creates the record, and make the other update it.</li>
 <li><strong>Add the Merge Contact action to new contact workflows</strong> with Match By set to email and phone.</li>
@@ -187,11 +187,18 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <h3>What happens to workflows when I merge duplicate contacts?</h3>
 <p>If the duplicate contact is deleted in the merge, HighLevel transfers the workflow execution to the master contact so the automation continues. If the master is already enrolled in that same workflow, the duplicate is removed from the workflow instead, and the Execution Logs show which of the two happened.</p>
 <h3>What happens to appointments and payments after a merge?</h3>
-<p>Appointments, payments, orders, and invoices default to the values on the master record you selected. Signed documents do not transfer automatically. Pick the record with the longest payment and appointment history as the master, review the merge preview before you confirm, and reconcile the payments list afterward.</p>
+<p>Appointments, payments, orders, and invoices default to the values on the master record you selected. Pick the record with the longest payment and appointment history as the master, review the merge preview before you confirm, and reconcile the payments list afterward.</p>
 <h3>Can I undo a merge in GoHighLevel?</h3>
 <p>No. HighLevel states that contact merges are permanent, and only subaccount admins can run them. Export your contacts before you start and keep a log of the masters you chose, so you have a reference if you need to rebuild something later.</p>
 </div>
 
+<h2 id="sources">Sources</h2>
+<p>Product behavior in this guide comes from HighLevel's own documentation. Check it again before you clean a live account, because the product changes.</p>
+<ul>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/48001202210-how-to-manage-and-merge-duplicate-contacts" rel="noopener">How to Manage and Merge Duplicate Contacts</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000007464-workflow-action-merge-contact" rel="noopener">Merge Contact workflow action</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/48001181714-allow-duplicate-contacts-contact-deduplication-preferences-" rel="noopener">Allow Duplicate Contacts (Contact Deduplication Preferences)</a></li>
+</ul>
 <div class="cta">
 <h2>Contact list out of control?</h2>
 <p>Send me subaccount access and the count you are working with. I will audit the duplicates, map the risky workflows, and clean it up in batches with logs you can check.</p>
