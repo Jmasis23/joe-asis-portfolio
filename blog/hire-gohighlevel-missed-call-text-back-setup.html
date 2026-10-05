@@ -57,7 +57,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 "author":{"@type":"Person","name":"Joe Asis","jobTitle":"Senior GoHighLevel Expert","url":"https://joe-asis-portfolio.vercel.app/booking"},
 "publisher":{"@type":"Organization","name":"Joe Asis","logo":{"@type":"ImageObject","url":"https://joe-asis-portfolio.vercel.app/og-image.jpg"}},
 "datePublished":"2026-09-17",
-"dateModified":"2026-09-17",
+"dateModified":"2026-10-06",
 "mainEntityOfPage":{"@type":"WebPage","@id":"https://joe-asis-portfolio.vercel.app/blog/hire-gohighlevel-missed-call-text-back-setup"}
 }
 </script>
@@ -79,7 +79,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <div class="eyebrow">GoHighLevel // Missed Call Text Back</div>
 <h1>GoHighLevel Missed Call Text Back Setup: What the Toggle Does, What a Real Build Adds</h1>
 <p class="sub">You turned on the checkbox. Then you read your own Conversations tab and watched one caller collect four identical texts. The rest of this page covers what the default feature does and where it stops, then what to ask anyone you hire to finish the job.</p>
-<div class="meta">By Joe Asis, Senior GoHighLevel Expert | Updated September 17, 2026 | 8 min read</div>
+<div class="meta">By Joe Asis, Senior GoHighLevel Expert | Updated October 6, 2026 | 8 min read</div>
 
 <div class="proofbar">
 <div><strong>Proof:</strong> 5 years in GoHighLevel daily. 100+ client systems built. 400 to 700+ subaccounts supported. 70+ VAs and students coached.</div>
@@ -102,7 +102,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 
 <h2 id="what">What Does the Built-In Missed Call Text Back Do?</h2>
 <p>It sends one SMS to the caller after an inbound call goes unanswered. You find it in the sub-account under Settings, then Phone System, then Voice, then Voicemail &amp; Missed Call Text Back. Tick the box to enable the feature, click Customize, and write your message in the Enter message field. There is a field below the editor where you can send yourself a test before you save.</p>
-<p>Two defaults shape the behavior. The incoming call timeout slider decides when a call even counts as missed, and HighLevel recommends 10 to 20 seconds. Answered calls never trigger a text back. Merge fields only fill in when the system already knows the contact, so a first-time caller sees your message exactly as written. HighLevel also picks the sending number: the number the caller dialed first, then a number you have already messaged that contact from, then your default outbound number.</p>
+<p>Two defaults shape the behavior. The incoming call timeout slider decides when a call even counts as missed, and HighLevel recommends 10 to 20 seconds. Answered calls never trigger a text back. Merge fields only fill in when the system already knows the contact, so a first-time caller sees your message exactly as written. HighLevel also picks the sending number. It tries the number the caller dialed first, if that number can send SMS. If not, it falls back to a number you have already messaged that contact from, then your default outbound number, then any other eligible messaging number in the location. So the text can come from a different number than the one the caller dialed.</p>
 
 <h3>Repeat callers get a text every time</h3>
 <p>HighLevel says so in its own documentation: the feature triggers an SMS for every missed call, even when the same caller tries several times within a brief timeframe. Call, hang up, call again, and that caller gets a second text. A third attempt gets a third, and your business starts to look like a malfunctioning robot.</p>
@@ -117,7 +117,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <li><strong>After-hours cover.</strong> The text reads the same at 2pm and at 2am. A build branches on when the call landed and sets the callback for the next business window.</li>
 <li><strong>AI or voicemail fallback.</strong> A build can route the number to a Voice AI agent that answers when nobody picks up, or keep voicemail in the chain with a greeting that says what happens next. Missed Call WhatsApp Back is a separate feature for WhatsApp-first leads.</li>
 <li><strong>Booking link.</strong> HighLevel's setup guides suggest putting your calendar link in the message itself. A build points that link at a calendar with open availability, plus confirmation, reminder, and no-show steps.</li>
-<li><strong>Attribution.</strong> Call tracking number pools, plus the In Number Pool and In Phone Number filters on the call trigger, let a build tag each lead with its source.</li>
+<li><strong>Attribution.</strong> Call tracking numbers let HighLevel attribute the source and keyword of a call in call reporting. A build carries that source onto the lead record so you can see which campaign produced it.</li>
 </ul>
 </div>
 <p>None of it needs exotic tooling. The difference between a text message and a system that owns the lead is what runs after the text.</p>
@@ -179,7 +179,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <li>Nobody asks "did anyone call this person back?" because the answer is in the record.</li>
 </ul>
 </div>
-<p>HighLevel's own messaging on this feature notes that most people do not leave voicemails and rarely call back, which is the argument for the automatic reply. One text buys a second chance. Capture, owner, and booking path decide whether it turns into a call.</p>
+<p>One text buys a second chance. Capture, owner, and booking path decide whether it turns into a call.</p>
 
 <div class="card faq">
 <h2>FAQ</h2>
@@ -192,6 +192,17 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <h3>How do I test missed call text back before going live?</h3>
 <p>Call the number from a phone that is not in your CRM and let it ring past the incoming call timeout, which HighLevel recommends setting at 10 to 20 seconds. Confirm one text arrives with the saved wording, then call twice more to check repeat-call suppression. Test after hours, reply to the text, click the booking link on a mobile device, and confirm the contact lands in the right pipeline stage with an owner and a callback task.</p>
 </div>
+
+<h2 id="sources">Sources</h2>
+<p>Product behavior in this guide comes from HighLevel's own documentation. Settings and menus change, so check the current pages before you build.</p>
+<ul>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/48001239140-where-and-how-to-configure-the-missed-call-text-back-feature" rel="noopener">Where and How to Configure the Missed Call Text Back Feature</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000006881-phone-number-edit-configuration-incoming-calls-settings-" rel="noopener">Phone Number Edit Configuration: Incoming Call Settings and Timeout Guidance</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000007498-inbound-calls-ivr-ai-routing-call-flow-explained" rel="noopener">Inbound Calls: IVR, AI, Routing and Call Flow Explained</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000002552-workflow-trigger-call-details" rel="noopener">Workflow Trigger: Call Details</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/48000981393-how-to-set-up-call-tracking-number-pool-" rel="noopener">How to Set Up Call Tracking (Number Pool)</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000002417-missed-call-whatsapp-back-overview-setup" rel="noopener">Missed Call WhatsApp Back: Setup and Best Practices</a></li>
+</ul>
 
 <div class="cta">
 <h2>Want the toggle turned into a system?</h2>
