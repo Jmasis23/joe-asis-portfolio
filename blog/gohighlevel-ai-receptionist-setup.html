@@ -56,7 +56,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 "author":{"@type":"Person","name":"Joe Asis","jobTitle":"Senior GoHighLevel Expert","url":"https://joe-asis-portfolio.vercel.app/booking"},
 "publisher":{"@type":"Organization","name":"Joe Asis","logo":{"@type":"ImageObject","url":"https://joe-asis-portfolio.vercel.app/og-image.jpg"}},
 "datePublished":"2026-09-17",
-"dateModified":"2026-09-17",
+"dateModified":"2026-10-22",
 "mainEntityOfPage":{"@type":"WebPage","@id":"https://joe-asis-portfolio.vercel.app/blog/gohighlevel-ai-receptionist-setup"}
 }
 </script>
@@ -78,7 +78,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <div class="eyebrow">GoHighLevel // AI Receptionist</div>
 <h1>GoHighLevel AI Receptionist Setup That Actually Books Calls</h1>
 <p class="sub">The agent answers, sounds fine, and nobody lands on the calendar. This is the order I use to make voice AI book real appointments inside GoHighLevel.</p>
-<div class="meta">By Joe Asis, Senior GoHighLevel Expert | Updated September 17, 2026 | 9 min read</div>
+<div class="meta">By Joe Asis, Senior GoHighLevel Expert | Updated October 22, 2026 | 9 min read</div>
 
 <div class="proofbar">
 <div><strong>Track record:</strong> 5 years working in GoHighLevel daily. 100+ client systems built. 400 to 700+ subaccounts supported. 70+ VAs and students coached. Snapshot-to-launch delivery, AI receptionists, and custom MCP integrations.</div>
@@ -118,7 +118,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 
 <h3>2. Phone number and voice configuration</h3>
 <p>On the Deploy tab, assign an eligible number or a Number Pool, which routes several numbers to one agent. Then pick Call Routing: answer calls directly, or act as backup when the primary path does not pick up. Set Working Hours to All Hours or a custom schedule.</p>
-<p>Voice, model, language, welcome message, idle reminders, and call duration live in the same area. Duration matters: the public API defaults to a five minute maximum call, and the ceiling is fifteen minutes.</p>
+<p>Voice, model, language, welcome message, idle reminders, and call duration live in the same area. Duration matters: the <a href="https://marketplace.gohighlevel.com/docs/ghl/voice-ai/patch-agent/" rel="noopener">HighLevel API documentation</a> lists a default maximum call of five minutes, adjustable from three to fifteen minutes.</p>
 
 <h3>3. Calendar and availability sync</h3>
 <p>Add the Appointment Booking action and point it at one calendar or several eligible ones. With more than one, Voice AI reads intent and picks the best fit from your calendar descriptions and routing cues, so write those like a dispatcher would. Add fallback behavior for requests that match nothing.</p>
@@ -132,7 +132,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <p>Working Hours decides when the agent answers at all. Outside those hours the phone number takes over: forwarding, timeout, voicemail. Decide hour by hour. An agent that books at 2am and texts a confirmation beats a voicemail box nobody checks before nine.</p>
 
 <h2 id="test">How Do You Test an AI Receptionist Before It Goes Live?</h2>
-<p>Test in two passes. A Web Call shakes out the prompt, the knowledge base, and the conversation flow without a phone number. Then run a Phone Call test for real telephony, because Call Transfer does not work in a Web Call test.</p>
+<p>Test in two passes. A Web Call shakes out the prompt, the knowledge base, and the conversation flow without a phone number. Then run a Phone Call test for real telephony, because <a href="https://help.gohighlevel.com/support/solutions/articles/155000004108-how-to-test-voice-ai-agents" rel="noopener">HighLevel notes</a> that Call Transfer is not supported in a Web Call test.</p>
 <div class="card">
 <ul class="checklist">
 <li>A vague request: "I need to see someone about this," with no service named.</li>
@@ -144,7 +144,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <li>Book, reschedule, cancel, and confirm you do not leave a second appointment behind.</li>
 </ul>
 </div>
-<p>Test calls show in Voice AI logs but stay out of dashboard analytics, so a quiet dashboard does not mean a quiet phone line. The Transcript Generated trigger only fires when a transcript finishes, so poor audio can skip your post-call automation.</p>
+<p>Test calls show in Voice AI logs but, per <a href="https://help.gohighlevel.com/support/solutions/articles/155000005211-how-to-view-test-call-logs-in-the-voice-ai-dashboard" rel="noopener">HighLevel</a>, stay out of dashboard analytics, so a quiet dashboard does not mean a quiet phone line. The <a href="https://help.gohighlevel.com/support/solutions/articles/155000006632-workflow-trigger-transcript-generated" rel="noopener">Transcript Generated trigger</a> only fires when a transcript finishes, so poor audio can skip your post-call automation.</p>
 
 <h2 id="fail">Which Failure Modes Stop an AI Receptionist From Booking?</h2>
 <div class="card">
@@ -159,7 +159,7 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 </div>
 
 <h2 id="measure">What Should You Measure After Launch?</h2>
-<p>The Voice AI dashboard reports total duration, average call duration, SMS sent, and workflows triggered, filterable by agent, date, direction, and action type. Per-call logs carry more detail. Judge the build on a few numbers:</p>
+<p>The <a href="https://help.gohighlevel.com/support/solutions/articles/155000004693-voice-ai-agents-dashboard-overview" rel="noopener">Voice AI dashboard</a> reports total calls, total duration, average call duration, SMS sent, and workflows triggered, filterable by agent, date, direction, and action type. Per-call logs carry more detail. Judge the build on a few numbers:</p>
 <ul>
 <li>Share of calls that end with a booked appointment.</li>
 <li>Transfers per hundred calls, and how many reached a human.</li>
@@ -185,6 +185,18 @@ footer{margin-top:48px;color:var(--muted);font-size:14px;border-top:1px solid va
 <p>It can. Set Working Hours to All Hours or a custom schedule, then check the number's own call flow for forwarding, timeout, and voicemail. Calls that arrive outside working hours follow the phone number settings, so test an after-hours call before you promise overnight coverage.</p>
 </div>
 
+<h2 id="sources">Sources</h2>
+<p>Product behavior in this guide comes from HighLevel's own documentation. Check it again before you build, because the product changes.</p>
+<ul>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000004107-how-to-create-voice-ai-agents" rel="noopener">Create, Test, and Deploy a Voice AI Agent</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000007203-highlevel-voice-ai-book-across-multiple-calendars-intent%E2%80%91based-selection-" rel="noopener">Book Across Multiple Calendars</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000004139-how-to-set-working-hours-for-voice-ai-agents" rel="noopener">Set Working Hours for Voice AI Agents</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000004108-how-to-test-voice-ai-agents" rel="noopener">How to Test Voice AI Agents</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000005211-how-to-view-test-call-logs-in-the-voice-ai-dashboard" rel="noopener">View Test Call Logs</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000004693-voice-ai-agents-dashboard-overview" rel="noopener">Voice AI Agents Dashboard Overview</a></li>
+<li><a href="https://help.gohighlevel.com/support/solutions/articles/155000006632-workflow-trigger-transcript-generated" rel="noopener">Transcript Generated workflow trigger</a></li>
+<li><a href="https://marketplace.gohighlevel.com/docs/ghl/voice-ai/patch-agent/" rel="noopener">Voice AI agent API reference</a></li>
+</ul>
 <div class="cta">
 <h2>Want an agent whose calls end in a booked appointment?</h2>
 <p>Send me the number your calls land on. I will map the calendars, actions, and escalation rules, then prove it with test calls before it goes live.</p>
