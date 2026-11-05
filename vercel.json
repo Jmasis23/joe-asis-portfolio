@@ -1,3 +1,10 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://joe.marlocmo.cfd",
+      "permanent": true
+    }
+  ]
 }
